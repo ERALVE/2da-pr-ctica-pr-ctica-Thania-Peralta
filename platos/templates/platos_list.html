@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de platos</title>
+</head>
+<body>
+    {% for platos in data %}
+        <p>Lista de platos</p>
+        <h1>Nombre del plato: {{ platos.nombre }}</h1>
+        <h1>Precio del plato: {{ platos.precio }}</h1>
+        <h1>Procedencia del plato: {{ platos.procedencia }}</h1>
+    {% endfor %}
+</body>
+</html>

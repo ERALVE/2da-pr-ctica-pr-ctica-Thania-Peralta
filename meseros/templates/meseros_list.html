@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de meseros</title>
+</head>
+<body>
+     {% for meseros in data %}
+    <p>Lista de meseros</p>
+    <li>Nombre del mesero: {{ meseros.nombre }}</li>
+    <p>Edad del mesero: {{ meseros.edad }}</p>
+    <p>Pais del mesero: {{ meseros.pais}}</p>
+    <p>Nacionalidad del mesero: {{ meseros.nacionalidad }}</p>
+    {% endfor %}
+
+</body>
+</html>
