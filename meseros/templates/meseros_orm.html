@@ -1,0 +1,26 @@
+{% extends "base_generic_mesero.html" %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Nacionalidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mesero in data %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ mesero.nombre }}</td>
+                <td>{{ mesero.edad }}</td>
+                <td>{{ mesero.pais }}</td>
+                <td>{{ mesero.nacionalidad }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
