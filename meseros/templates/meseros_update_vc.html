@@ -1,0 +1,14 @@
+{% extends "base_generic_mesero.html" %}
+
+{% block content%}
+    <h1>Editar datos de los meseros </h1>
+    <div class="card-body">
+            <form method="post">
+                {% csrf_token  %}
+                {{ form.as_p }}
+                <a class="btn btn-primary" href={% url 'meseros_list' %} role="button">Cancelar</a>
+                <button class="btn btn-success" type="submit">Editar datos </button>
+            </form>
+    </div>
+
+{% endblock %}

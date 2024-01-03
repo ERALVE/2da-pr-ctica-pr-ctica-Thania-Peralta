@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from platos.models import Platos
 from django.db.models import Q
+#Serializador
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import PlatosSerializer
 
 
 # Create your views here.
@@ -37,4 +41,11 @@ def platos_orm_delet(request):
         # platos.save()
 
         return render(request, 'platos_orm_delet.html', {'data': data_context})
+"""Examen final"""
 
+
+@api_view(['GET'])
+def platos_50(request):
+        platos_50 = Platos.objects.filter(precio__gte=50)
+        serializer = PlatosSerializer(platos_50, many=True)
+        return Response(serializer.data)

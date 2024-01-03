@@ -24,10 +24,8 @@
                     <td>{{ mesero.pais }}</td>
                     <td>{{ mesero.nacionalidad }}</td>
                     <td>
-                        <a class="btn btn-outline-info" href="{% url 'meseros_update_vc' pk=mesero.pk %}">Editar</a>
-                        <a class="btn btn-outline-danger" href="{% url 'meseros_delete_vc' pk=mesero.pk %}">Eliminar</a>
-{#                        <a class="btn btn-outline-primary" href="#" role="button">Link</a>#}
-
+                        <a href="{% url 'meseros_update_vc' pk=mesero.pk %}">Editar</a>
+                        <a href="{% url 'meseros_delete_vc' pk=mesero.pk %}">Eliminar</a>
                     </td>
                 </tr>
             {% endfor %}

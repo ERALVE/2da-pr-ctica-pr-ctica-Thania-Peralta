@@ -1,0 +1,18 @@
+{% extends "base_generic_mesero.html" %}
+
+
+{% block title%} <h1>Eliminar registros de la base de datos de la app 'Meseros'</h1>{% endblock %}
+{% block content%}
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <p>Nombre: {{ meseros.nombre }}</p>
+            <p>Edad: {{ meseros.edad }}</p>
+            <p>País: {{ meseros.pais }}</p>
+            <p>Nacionalidad: {{ meseros.nacionalidad }}</p>
+            <p>¿Estás seguro de que deseas eliminar este registro?</p>
+            <a class="btn btn-primary" href={% url 'meseros_list' %} role="button">No, cancelar</a>
+            <button class="btn btn-success" type="submit">Sí, eliminar</button>
+        </form>
+    </div>
+{% endblock %}

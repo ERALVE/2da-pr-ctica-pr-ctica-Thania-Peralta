@@ -1,0 +1,23 @@
+{% extends "base_generic_mesero.html" %}
+
+{% block title %} <title>Ingreso de datos personales</title> {% endblock %}
+
+{% block content %}
+    <h1>Ingreso de datos personales</h1>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {% if data.errors %}
+                <div class="alert alert-danger">
+                    <strong>Error:</strong> Por favor, corrige los errores en el formulario.
+                    {{ data.errors }}
+                </div>
+            {% endif %}
+
+            <a class="btn btn-primary" href={% url 'meseros_list' %} role="button">Cancelar</a>
+            <button class="btn btn-success" type="submit">Ingresar datos nuevos</button>
+        </form>
+    </div>
+{% endblock %}

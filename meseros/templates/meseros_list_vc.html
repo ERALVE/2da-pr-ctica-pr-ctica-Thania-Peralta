@@ -1,9 +1,9 @@
 {% extends "base_generic_mesero.html" %}
 
-{% block title %} <title>Lista de Meseros del restaurante 'Misa'</title> {% endblock %}
+{% block title %} <title>Lista de Meseros de Perú</title> {% endblock %}
 
 {% block content %}
-    <h3>Lista de meseros registrados en la base de datos del restaurante 'Misa'</h3>
+    <h3>Lista de meseros de Perú registrados en la base de datos </h3>
     <table class="table">
         <thead>
             <tr>
@@ -12,7 +12,6 @@
                 <th scope="col">Edad</th>
                 <th scope="col">País</th>
                 <th scope="col">Nacionalidad</th>
-                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,12 +22,6 @@
                     <td>{{ mesero.edad }}</td>
                     <td>{{ mesero.pais }}</td>
                     <td>{{ mesero.nacionalidad }}</td>
-                    <td>
-                        <a class="btn btn-outline-info" href="{% url 'meseros_update_vc' pk=mesero.pk %}">Editar</a>
-                        <a class="btn btn-outline-danger" href="{% url 'meseros_delete_vc' pk=mesero.pk %}">Eliminar</a>
-{#                        <a class="btn btn-outline-primary" href="#" role="button">Link</a>#}
-
-                    </td>
                 </tr>
             {% endfor %}
         </tbody>
